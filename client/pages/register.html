@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration-Quiz Master</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="bg-[#523bae]">
+      <nav
+        class="py-4 m-auto max-w-[90%] flex justify-between items-center font-semibold text-gray-300"
+      >
+        <a href="/index.html" class="text-lg uppercase text-gray-100">
+          <span>Quiz</span>
+          <span>master.</span>
+        </a>
+
+        <ul class="flex justify-between -ml-[30%] w-[20%] text-sm">
+          <li>
+            <a href="/pages/quiz.html" class="hover:text-white">Trivia</a>
+          </li>
+          <li>
+            <a href="/pages/dashboard.html" class="hover:text-white">Quiz</a>
+          </li>
+          <li><a href="#" class="cursor-not-allowed">Leaderboard</a></li>
+        </ul>
+
+        <div class="space-x-3">
+          <button
+            class="text-sm hover:text-white"
+            onclick="location.href='/pages/login.html'"
+          >
+            Login
+          </button>
+          <button
+            class="text-xs py-2 px-4 rounded-2xl bg-[#895ce0] hover:bg-[#370d97] hover:text-white"
+            onclick="location.href='/pages/register.html'"
+          >
+            Registration
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Register-card -->
+    <div class="h-[90.7vh] grid place-items-center bg-[#c4c8d9]">
+      <div
+        class="flex flex-row-reverse w-[50%] min-h-[70vh] rounded-2xl shadow-lg shadow-gray-600 overflow-hidden bg-white"
+      >
+        <!-- Form-container -->
+        <div class="min-w-[50%] px-8 py-4">
+          <h2 class="text-2xl font-bold">REGISTER</h2>
+          <p class="text-sm mt-1 mb-3 text-gray-500">
+            Welcome to the Quiz Master App
+          </p>
+
+          <form
+            id="form"
+            action="http://127.0.0.1:3000/register"
+            method="POST"
+            class="[&>li]:list-none text-gray-500 space-y-1"
+            novalidate
+          >
+            <!-- Username -->
+            <label class="block">
+              <span class="block text-sm font-medium text-slate-700"
+                >Username</span
+              >
+              <input type="text" class="custom-input" name="username" />
+              <p class="custom-input-error">Please provide a valid username.</p>
+            </label>
+
+            <!-- Email -->
+            <label class="block">
+              <span class="block text-sm font-medium text-slate-700"
+                >Email</span
+              >
+              <input type="email" class="custom-input" />
+              <p class="custom-input-error">
+                Please provide a valid email address.
+              </p>
+            </label>
+
+            <!-- Password -->
+            <label class="block">
+              <span class="block text-sm font-medium text-slate-700"
+                >Password</span
+              >
+              <input type="password" class="custom-input" />
+              <p class="custom-input-error">Please provide a valid password.</p>
+            </label>
+
+            <!-- Confirm Password -->
+            <label class="block">
+              <span class="block text-sm font-medium text-slate-700"
+                >Confirm Password</span
+              >
+              <input type="password" class="custom-input" />
+              <p class="custom-input-error">Confirm password must be same.</p>
+            </label>
+
+            <!-- Checkbox -->
+            <label class="flex items-center gap-2 text-sm">
+              <input
+                type="checkbox"
+                name="check"
+                id="checkbox"
+                class="accent-[#523bae]"
+              />
+              <span for="checkbox">I agree to the terms of service</span>
+            </label>
+
+            <!-- Register in button -->
+            <label class="block">
+              <button
+                type="submit"
+                class="py-2 px-4 bg-[#523bae] text-white rounded text-sm font-semibold w-full my-3"
+              >
+                Create Account
+              </button>
+            </label>
+
+            <!-- Already have an account -->
+            <label class="block text-xs">
+              Already have an account?
+              <a href="#" class="text-[#523bae] font-semibold">Log in</a>
+            </label>
+          </form>
+        </div>
+
+        <!-- Get Started container -->
+        <div
+          class="flex-1 rounded-[0_150px_100px_0] bg-[#523bae] grid place-content-center text-white space-y-6 [&>*]:m-auto"
+        >
+          <h2 class="font-bold text-2xl">Get Started!</h2>
+          <p class="text-sm text-gray-200 max-w-[75%] text-center">
+            Welcome to the Quiz Master App. If you already a member, Login to
+            access account
+          </p>
+          <a
+            href="./login.html"
+            class="border text-center py-1.5 px-6 rounded-lg text-xs w-fit font-bold hover:bg-white hover:text-[#523bae]"
+            >LOG IN</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/RegisterValidation.js"></script>
+  </body>
+</html>

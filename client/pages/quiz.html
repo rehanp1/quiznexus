@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Quiz-Quiz Master</title>
+    <script
+      src="https://kit.fontawesome.com/e4a0b4671a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="bg-[#523bae]">
+      <nav
+        class="py-4 m-auto max-w-[90%] flex justify-between items-center font-semibold text-gray-300"
+      >
+        <a href="/index.html" class="text-lg uppercase text-gray-100">
+          <span>Quiz</span>
+          <span>master.</span>
+        </a>
+
+        <ul class="flex justify-between -ml-[30%] w-[20%] text-sm">
+          <li>
+            <a href="/pages/quiz.html" class="hover:text-white">Trivia</a>
+          </li>
+          <li>
+            <a href="/pages/dashboard.html" class="hover:text-white">Quiz</a>
+          </li>
+          <li><a href="#" class="cursor-not-allowed">Leaderboard</a></li>
+        </ul>
+
+        <div class="space-x-3">
+          <button
+            class="text-sm hover:text-white"
+            onclick="location.href='/pages/login.html'"
+          >
+            Login
+          </button>
+          <button
+            class="text-xs py-2 px-4 rounded-2xl bg-[#895ce0] hover:bg-[#370d97] hover:text-white"
+            onclick="location.href='/pages/register.html'"
+          >
+            Registration
+          </button>
+        </div>
+      </nav>
+    </div>
+    <div
+      class="w-full min-h-screen flex items-center justify-center gap-10 relative bg-[#c4c8d9]"
+    >
+      <div class="text-slate-800 max-w-[30%] text-justify">
+        <h1 class="absolute top-10 text-2xl font-semibold">Create Quiz</h1>
+        <h3 class="text-2xl font-semibold mb-3">Rules :</h3>
+        <ol class="space-y-4 [&>li]:font-semibold">
+          <li>
+            1. Keep Questions Clear and Concise: Write clear and concise
+            questions that are easy to understand.
+          </li>
+          <li>
+            2. Provide Accurate Answers: Ensure that the correct answers to your
+            questions are accurate and well-researched.
+          </li>
+          <li>
+            3. Avoid Bias: Be mindful of biases when crafting questions and
+            answers.
+          </li>
+          <li>
+            4. Testing: Test the quiz thoroughly before making it available to
+            participants
+          </li>
+        </ol>
+      </div>
+      <section
+        class="bg-white rounded-lg py-5 shadow-lg shadow-gray-900 space-y-2 min-w-[40%]"
+      >
+        <p class="bg-[#523bae] text-white py-3 px-8 text-sm font-bold">
+          QUIZ MASTER
+        </p>
+        <div class="max-w-[90%] m-auto text-sm space-y-2 flex flex-col">
+          <p class="font-bold text-purple-700">New Quiz</p>
+
+          <form
+            id="quiz-form"
+            action="#"
+            class="[&>li]:list-none text-gray-600 space-y-6"
+          >
+            <!-- Question -->
+            <label class="block">
+              <span class="block text-sm font-medium text-slate-700"
+                >Question</span
+              >
+              <textarea
+                type="text"
+                placeholder="Type here..."
+                class="custom-input"
+              ></textarea>
+            </label>
+
+            <!-- Correct Option -->
+            <label class="block">
+              <span class="block text-sm font-medium text-slate-700"
+                >Correct Option</span
+              >
+              <input
+                type="text"
+                placeholder="Correct Option"
+                class="custom-input"
+              />
+            </label>
+
+            <!-- Other Options -->
+            <label class="block">
+              <span class="block text-sm font-medium text-slate-700"
+                >Other Options</span
+              >
+              <input type="text" placeholder="Option 1" class="custom-input" />
+              <input type="text" placeholder="Option 2" class="custom-input" />
+              <input type="text" placeholder="Option 3" class="custom-input" />
+            </label>
+
+            <div class="flex [&>label]:flex-1 gap-2">
+              <!-- Difficulty -->
+              <label class="block">
+                <span class="block text-sm font-medium text-slate-700"
+                  >Difficulty</span
+                >
+                <select class="custom-input">
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </label>
+
+              <!-- Category -->
+              <label class="block">
+                <span class="block text-sm font-medium text-slate-700"
+                  >Category</span
+                >
+                <select class="custom-input">
+                  <option value="musics">Music</option>
+                  <option value="animals">Animals</option>
+                  <option value="sports">Sports</option>
+                  <option value="general knowledge">General Knowledge</option>
+                  <option value="geography">Geography</option>
+                  <option value="history">History</option>
+                  <option value="Cartoons & Anime">Cartoons & Anime</option>
+                  <option value="politics">Politics</option>
+                </select>
+              </label>
+            </div>
+
+            <!-- Add button -->
+            <label class="block">
+              <button
+                type="submit"
+                class="py-2 outline-none px-4 bg-[#523bae] text-white rounded text-sm font-semibold w-full my-3 focus:ring-2 focus:ring-offset-2 focus:ring-[#523bae]"
+              >
+                <i class="fa-solid fa-plus"></i> Add Quiz
+              </button>
+            </label>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <script src="../js/AddQuiz.js"></script>
+  </body>
+</html>

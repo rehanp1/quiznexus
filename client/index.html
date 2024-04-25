@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/e4a0b4671a.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Quiz Mater</title>
+  </head>
+  <body>
+    <main class="bg-gradient-to-tr from-[#370d97] to-[#895ce0]">
+      <!-- Navbar -->
+      <nav
+        class="py-4 m-auto max-w-[90%] flex justify-between items-center font-semibold text-gray-300"
+      >
+        <a href="/index.html" class="text-lg uppercase text-gray-100">
+          <span>Quiz</span>
+          <span>master.</span>
+        </a>
+
+        <ul class="flex justify-between -ml-[30%] w-[20%] text-sm">
+          <li>
+            <a href="/pages/quiz.html" class="hover:text-white">Trivia</a>
+          </li>
+          <li>
+            <a href="/pages/dashboard.html" class="hover:text-white">Quiz</a>
+          </li>
+          <li><a href="#" class="cursor-not-allowed">Leaderboard</a></li>
+        </ul>
+
+        <div class="space-x-3">
+          <button
+            class="text-sm hover:text-white"
+            onclick="location.href='/pages/login.html'"
+          >
+            Login
+          </button>
+          <button
+            class="text-xs py-2 px-4 rounded-2xl bg-[#895ce0] hover:bg-[#370d97] hover:text-white"
+            onclick="location.href='/pages/register.html'"
+          >
+            Registration
+          </button>
+        </div>
+      </nav>
+
+      <!-- Intrduction: Info and Desktop, Mobile view -->
+      <div class="m-auto max-w-[90%] grid grid-cols-2 py-4">
+        <!-- Into Part "Daily Quiz heading" -->
+        <div class="space-y-3 self-center max-w-[70%]">
+          <h2 class="text-5xl capitalize text-white font-bold">
+            daily quiz, daily bonus- play today!
+          </h2>
+          <p class="text-gray-300">
+            Dive into the ultimate quiz experience — a blend of excitement,
+            learning. and triumph, quizzes it's more than a game.
+          </p>
+          <button
+            class="text-sm py-2 px-4 bg-yellow-400 uppercase rounded-md hover:bg-yellow-500"
+          >
+            <i class="fa-solid fa-circle-play mr-2"></i>play today
+          </button>
+        </div>
+
+        <!-- Images -->
+        <div class="relative">
+          <!-- tab-image -->
+          <section
+            class="bg-gray-200 rounded-lg py-5 shadow-lg shadow-gray-900 space-y-2 max-w-[600px] ml-auto"
+          >
+            <p class="bg-[#370d97] text-white py-3 px-12 text-sm font-bold">
+              QUIZ MASTER
+            </p>
+            <div class="max-w-[80%] m-auto text-sm space-y-2 flex flex-col">
+              <p class="font-bold text-purple-700">New Quiz</p>
+              <p class="font-bold">Question</p>
+              <p class="bg-white p-3 rounded-md">
+                Which is fastest animal on the land. What is the tallest species
+                of penguin. Which animal has the largest eyes in the animal
+                kingdom. How long does it take for a sloth to digest its food. |
+              </p>
+              <div class="flex justify-between">
+                <span>
+                  <p class="font-semibold mb-2">Question Type</p>
+                  <p class="bg-white p-2 text-xs">
+                    Multiple Choice<i class="fa-solid fa-angle-down ml-2"></i>
+                  </p>
+                </span>
+                <span>
+                  <p class="font-semibold mb-2">Difficulty</p>
+                  <p class="bg-white p-2 text-xs">
+                    Medium<i class="fa-solid fa-angle-down ml-2"></i>
+                  </p>
+                </span>
+                <span>
+                  <p class="font-semibold mb-2">Language</p>
+                  <p class="bg-white p-2 text-xs mb-4">
+                    English<i class="fa-solid fa-angle-down ml-2"></i>
+                  </p>
+                </span>
+              </div>
+
+              <button
+                class="px-6 py-2 rounded-md bg-[#370d97] text-white text-xs font-bold w-fit self-center cursor-auto"
+              >
+                Add Quesiton
+              </button>
+            </div>
+          </section>
+
+          <!-- mobile-image -->
+          <section
+            class="bg-[#370d97] border-[10px] border-white p-2 max-w-[30%] rounded-[2rem] shadow-lg shadow-gray-900 absolute top-[25%] -left-[12%]"
+          >
+            <div class="bg-white w-16 h-6 rounded-2xl mx-auto mb-4"></div>
+            <i class="fa-solid fa-angle-left text-white mb-4"></i>
+            <div
+              class="bg-gray-200 p-3 rounded-2xl text-xs flex flex-col gap-3"
+            >
+              <h4 class="font-bold">
+                Which animal has the largest eyes in the animal kingdom?
+              </h4>
+              <p class="p-2 bg-white rounded-lg">African Elephant</p>
+              <p class="p-2 bg-green-300 rounded-lg">Blue Whale</p>
+              <p class="p-2 bg-white rounded-lg">Hippopotemus</p>
+              <p class="p-2 bg-white rounded-lg">Giraffe</p>
+              <button
+                class="bg-[#370d97] py-1 px-3 text-white rounded-lg w-fit self-center cursor-auto"
+              >
+                Next Question
+              </button>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Scroller, cards will be inserted through JavaScript -->
+      <div
+        class="p-2 absolute min-w-[90%] left-[50%] -translate-x-[50%] -bottom-24 shadow-[0px_0px_15px_black] z-20 bg-white rounded-xl"
+      >
+        <div class="scroller flex gap-3 overflow-auto p-2"></div>
+      </div>
+
+      <!-- wave-div -->
+      <div class="wave"></div>
+    </main>
+
+    <!-- Four-Card-Container -->
+    <div class="bg-gradient-to-br from-gray-200 to-gray-300">
+      <div class="four-cards max-w-[90%] m-auto text-center py-8">
+        <h2 class="custom-heading">Play, Learn and Earn bonus</h2>
+        <p class="custom-para">Check yourself, Earn yourself!</p>
+
+        <!-- Opacity-Cards Cards will be inserted through javascript -->
+        <div class="opacity-cards flex gap-8"></div>
+      </div>
+    </div>
+
+    <!-- Circle-Image-Container -->
+    <div class="max-w-[90%] m-auto text-center py-8">
+      <h2 class="custom-heading">QuizKwik Winners</h2>
+      <p class="custom-para">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis quos
+        commodi maiores eligendi omnis
+      </p>
+
+      <!-- circle-div -->
+      <div class="max-w-[800px] h-[50vh] m-auto relative overflow-hidden">
+        <span
+          class="rounded-[50%] w-[70%] aspect-square absolute -translate-x-[50%] left-[50%] bg-gradient-to-b from-purple-200"
+        >
+          <span
+            class="center-circle w-[60%] bg-gradient-to-b from-purple-500"
+          ></span>
+          <span
+            class="center-circle w-[75%] bg-gradient-to-b from-purple-400"
+          ></span>
+          <span class="center-circle w-[85%] bg-gradient-to-b from-purple-300">
+            <img
+              class="w-[60%] absolute left-[50%] -translate-x-[50%] top-12"
+              src="/images/mobiles.webp"
+              alt="mobile-img"
+            />
+          </span>
+        </span>
+      </div>
+
+      <button
+        class="py-2 px-4 bg-[#370d97] text-xs text-white font-semibold rounded-lg mt-8 hover:bg-purple-950"
+      >
+        LEARN MORE <i class="fa-solid fa-arrow-right-long"></i>
+      </button>
+    </div>
+
+    <!-- Grid-Images -->
+    <div class="max-w-[90%] m-auto text-center py-8">
+      <h2 class="custom-heading">Be the top on the list</h2>
+      <p class="custom-para">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis quos
+        commodi maiores eligendi omnis
+      </p>
+
+      <!-- grid-Images will inserted through JavaScript -->
+      <div
+        class="grid-images-contianer max-w-[65%] columns-4 gap-1 space-y-1 m-auto"
+      ></div>
+    </div>
+
+    <!-- Slider -->
+    <div class="py-8 bg-gradient-to-br from-gray-200 to-gray-300">
+      <div class="max-w-[90%] m-auto text-center relative">
+        <h2 class="custom-heading">Our happy users</h2>
+        <p class="custom-para">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis quos
+          commodi maiores eligendi omnis
+        </p>
+
+        <!-- slides will inserted through JavaScript -->
+        <div
+          class="slider-container w-[1020px] m-auto flex gap-4 overflow-hidden"
+        ></div>
+
+        <!-- buttons prev and next -->
+        <button
+          class="prev-btn absolute left-[10%] top-[50%] text-2xl text-white hover:scale-125"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button
+          class="next-btn absolute right-[10%] top-[50%] text-2xl text-white hover:scale-125"
+        >
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-8 px-20 text-sm bg-[#523bae] text-white">
+      <!-- Email, Address, Options -->
+      <div class="flex">
+        <div class="flex-initial w-[35%]">
+          <h1 class="mb-6 text-lg font-semibold">Quiz Master.</h1>
+
+          <h2 class="font-semibold">Contact</h2>
+
+          <address class="text-gray-300">
+            5534 Somewhere In. The World 22193-10212<br />
+
+            <a
+              class="grid items-center max-w-max bg-white text-black font-semibold rounded-3xl my-4 py-1 px-5 hover:bg-purple-200"
+              href="mailto:example@gmail.com"
+              >Email Us</a
+            >
+          </address>
+        </div>
+
+        <ul class="flex flex-1 [&_li]:leading-8">
+          <li class="flex-initial w-1/4">
+            <h2>Media</h2>
+
+            <ul class="text-gray-300">
+              <li>
+                <a href="#">Online</a>
+              </li>
+
+              <li>
+                <a href="#">Print</a>
+              </li>
+
+              <li>
+                <a href="#">Alternative Ads</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="flex-1">
+            <h2>Technology</h2>
+
+            <ul class="text-gray-300 columns-2">
+              <li>
+                <a href="#">Hardware Design</a>
+              </li>
+
+              <li>
+                <a href="#">Software Design</a>
+              </li>
+
+              <li>
+                <a href="#">Digital Signage</a>
+              </li>
+
+              <li>
+                <a href="#">Automation</a>
+              </li>
+
+              <li>
+                <a href="#">Artificial Intelligence</a>
+              </li>
+
+              <li>
+                <a href="#">IoT</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="flex-initial w-[30%]">
+            <h2>Legal</h2>
+
+            <ul class="text-gray-300">
+              <li>
+                <a href="#">Privacy Policy</a>
+              </li>
+
+              <li>
+                <a href="#">Terms of Use</a>
+              </li>
+
+              <li>
+                <a href="#">Sitemap</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- copywrite and made by -->
+      <div class="flex justify-between text-gray-200 mt-4">
+        <p>&copy; 2019 Something. All rights reserved.</p>
+
+        <p>Made with <span class="heart">♥</span> remotely from Anywhere</p>
+      </div>
+    </footer>
+
+    <script src="js/scroller.js"></script>
+    <script src="js/opacityCards.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/gridImages.js"></script>
+  </body>
+</html>

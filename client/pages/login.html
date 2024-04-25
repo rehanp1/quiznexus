@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login-Quiz Master</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="bg-[#523bae]">
+      <nav
+        class="py-4 m-auto max-w-[90%] flex justify-between items-center font-semibold text-gray-300"
+      >
+        <a href="/index.html" class="text-lg uppercase text-gray-100">
+          <span>Quiz</span>
+          <span>master.</span>
+        </a>
+
+        <ul class="flex justify-between -ml-[30%] w-[20%] text-sm">
+          <li>
+            <a href="/pages/quiz.html" class="hover:text-white">Trivia</a>
+          </li>
+          <li>
+            <a href="/pages/dashboard.html" class="hover:text-white">Quiz</a>
+          </li>
+          <li><a href="#" class="cursor-not-allowed">Leaderboard</a></li>
+        </ul>
+
+        <div class="space-x-3">
+          <button
+            class="text-sm hover:text-white"
+            onclick="location.href='/pages/login.html'"
+          >
+            Login
+          </button>
+          <button
+            class="text-xs py-2 px-4 rounded-2xl bg-[#895ce0] hover:bg-[#370d97] hover:text-white"
+            onclick="location.href='/pages/register.html'"
+          >
+            Registration
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Login-card -->
+    <div class="h-[90.7dvh] grid place-items-center bg-[#c4c8d9]">
+      <div
+        class="flex w-[50%] min-h-[70vh] rounded-2xl shadow-lg shadow-gray-600 overflow-hidden bg-white"
+      >
+        <!-- Form-container -->
+        <div class="max-w-[50%] grid place-content-center p-8">
+          <h2 class="text-2xl font-bold">LOG IN</h2>
+          <p class="text-sm mt-3 mb-8 text-gray-500">
+            Welcome to the Quiz Master App for enhancing knowledge. Log in as a
+            member to experience.
+          </p>
+
+          <form
+            id="login-form"
+            action="#"
+            class="[&>li]:list-none text-gray-500 space-y-2"
+          >
+            <!-- Email -->
+            <label class="block">
+              <span class="block text-sm font-medium text-slate-700"
+                >Email</span
+              >
+              <input type="email" class="custom-input" />
+              <p class="custom-input-error">
+                Please provide a valid email address.
+              </p>
+            </label>
+
+            <!-- Password -->
+            <label class="block">
+              <span class="block text-sm font-medium text-slate-700"
+                >Password</span
+              >
+              <input type="password" class="custom-input" />
+              <p class="custom-input-error">Please provide a valid password.</p>
+            </label>
+
+            <!-- Checkbox -->
+            <label class="flex items-center gap-2 text-sm">
+              <input
+                type="checkbox"
+                name="check"
+                id="checkbox"
+                class="accent-[#523bae]"
+              />
+              <span for="checkbox">I agree to the terms of service</span>
+            </label>
+
+            <!-- Log in button -->
+            <label class="block">
+              <button
+                type="submit"
+                class="py-2 px-4 bg-[#523bae] text-white rounded text-sm font-semibold w-full my-3"
+              >
+                Log in
+              </button>
+            </label>
+
+            <!-- Don't hava an account -->
+            <label class="block text-xs">
+              Don't have an account?
+              <a href="#" class="text-[#523bae] font-semibold"
+                >Create Account</a
+              >
+            </label>
+          </form>
+        </div>
+
+        <!-- Welcome, Back container -->
+        <div
+          class="flex-1 rounded-[150px_0_0_100px] bg-[#523bae] grid place-content-center text-white space-y-6 [&>*]:m-auto"
+        >
+          <h2 class="font-bold text-2xl">Welcome, Back!</h2>
+          <p class="text-sm text-gray-200 max-w-[75%] text-center">
+            Register with your personal details to use all of site features
+          </p>
+          <a
+            href="./register.html"
+            class="border text-center py-1.5 px-6 rounded-lg text-xs w-fit font-bold hover:bg-white hover:text-[#523bae]"
+            >REGISTER</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/LoginValidation.js"></script>
+  </body>
+</html>
