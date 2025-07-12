@@ -9,8 +9,7 @@ QuizNexus is a web-based quiz platform built using JavaScript, HTML, and CSS. It
 ## Features
 
 - **Quiz Panel:** Attempt questions in a dynamic and interactive interface.
-- **Dashboard:** Track tests you have taken and view performance statistics.
-- **User Progress Tracking:** See your attempts, scores, and quiz history.
+- **Dashboard:** Track tests you have taken and see your attempts, scores, and quiz history.
 - **Responsive Design:** Works well on desktops, tablets, and mobile devices.
 
 ## Technologies Used
