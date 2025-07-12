@@ -141,7 +141,7 @@ function LandingPage() {
           </p>
           <button onclick="confirmBeforeTest()"><i class="fa-solid fa-circle-play"></i>play today</button>
         </div>
-        <img src="/images/banner.png" width="100%" alt="" />
+        <img src="/images/hero.png" width="100%" alt="" />
       </div>
     </main>
   `;

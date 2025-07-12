@@ -1,6 +1,10 @@
 # QuizNexus
 
-QuizNexus is a web-based quiz platform built with JavaScript, CSS, and HTML. It allows users to attempt quizzes, track their performance, and manage their activity through a user-friendly dashboard.
+![QuizNexus](/images/banner.png)
+
+# Overview
+
+QuizNexus is a web-based quiz platform built using JavaScript, HTML, and CSS. It is implemented as a Single Page Application (SPA), allowing smooth navigation without page reloads. Users can attempt quizzes, track their scores, and manage their activity through a clean, user-friendly dashboard.
 
 ## Features
 
@@ -32,11 +36,9 @@ QuizNexus is a web-based quiz platform built with JavaScript, CSS, and HTML. It 
 ```
 quiznexus/
 ├── index.html         # Main entry point
-├── quiz.html          # Quiz panel
-├── dashboard.html     # User dashboard
-├── css/               # Stylesheets
-├── js/                # JavaScript files
-├── assets/            # Images, icons, etc.
+├── style.css          # Stylesheet
+├── main.js            # JavaScript file
+├── images/            # Images, icons, etc.
 └── README.md
 ```
 
@@ -48,10 +50,6 @@ quiznexus/
 ## Contributing
 
 Contributions are welcome! Please open issues or submit pull requests for improvements and bug fixes.
-
-## License
-
-This project is licensed under the MIT License.
 
 ## Contact
 
