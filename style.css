@@ -50,7 +50,8 @@ body {
 }
 
 main {
-  height: 100vh;
+  height: 100dvh;
+
   background: linear-gradient(
     130deg,
     var(--dark-purple),
@@ -432,8 +433,17 @@ nav ul {
 }
 
 @media (max-width: 720px) {
-  .login-container {
+  .form-container {
     grid-template-columns: 1fr;
+    width: 90% !important;
+
+    & > :first-child {
+      order: 2;
+    }
+    & > :last-child {
+      order: 1;
+      border-radius: 0px;
+    }
   }
 
   .form-section,
@@ -446,6 +456,26 @@ nav ul {
   .welcome-section {
     border-radius: 0;
   }
+
+  .register-container {
+    & > :first-child {
+      order: 2;
+    }
+    & > :last-child {
+      order: 1;
+      border-radius: 0;
+    }
+  }
+
+  .create-account {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1080px) {
+  .form-container {
+    width: 80%;
+  }
 }
 
 /* ----------------------------------------------------------------------------- */
@@ -454,7 +484,9 @@ nav ul {
   position: fixed;
   padding: 12px;
   border-radius: 5px;
-  width: 23rem;
+  width: 90%;
+  max-width: 23rem;
+  z-index: 99999;
 
   top: 20px;
   left: 50%;
@@ -835,5 +867,81 @@ th {
   }
   .main {
     padding: 20px;
+  }
+}
+
+/* ---------------------------------------------------- */
+
+.mobile-sidebar {
+  height: 100%;
+  width: 280px;
+  padding: 20px;
+  background: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: none;
+  z-index: 1000;
+  box-shadow: -2px -2px 20px rgba(0, 0, 0, 0.5);
+  transition: display 0.3s ease-in-out;
+}
+
+.mobile-sidebar section {
+  li {
+    color: white;
+    padding: 10px 10px 10px 20px;
+    background: linear-gradient(
+      130deg,
+      var(--dark-purple),
+      var(--medium-purple)
+    );
+    list-style: none;
+    margin-block: 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.btns-mobile-sidebar {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  bottom: 20px;
+  width: calc(100% - 40px);
+
+  button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: linear-gradient(
+      130deg,
+      var(--dark-purple),
+      var(--medium-purple)
+    );
+    color: white;
+  }
+
+  .logout-ms {
+    background: linear-gradient(130deg, red, #fc5050);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-sidebar {
+    display: none !important;
   }
 }

@@ -63,6 +63,16 @@ const handleLogout = () => {
 };
 
 const confirmBeforeTest = () => {
+  const mobileSidebar = document.getElementsByClassName("mobile-sidebar")[0];
+  if (mobileSidebar) {
+    mobileSidebar.style.display = "none";
+  }
+  const isAuth = isAuthenticate();
+  if (!isAuth) {
+    showToast("Please Login to take test", "error");
+    return;
+  }
+
   let str = `
     <div>
       <h4>Are you sure you wanna take test ?</h4>
@@ -73,10 +83,22 @@ const confirmBeforeTest = () => {
   showDailog(str);
 };
 
+function handleMobileSidebar(action) {
+  const mobileSidebar = document.getElementsByClassName("mobile-sidebar")[0];
+
+  if (action === "close" && mobileSidebar) {
+    mobileSidebar.style.display = "none";
+  }
+  if (action === "open" && mobileSidebar) {
+    mobileSidebar.style.display = "block";
+  }
+}
+
 window.handleRegister = handleRegister;
 window.handleLogin = handleLogin;
 window.handleLogout = handleLogout;
 window.confirmBeforeTest = confirmBeforeTest;
+window.handleMobileSidebar = handleMobileSidebar;
 
 //
 // -----------------------------------------------------------------------------------
@@ -84,7 +106,78 @@ window.LandingPage = LandingPage;
 window.Login = Login;
 window.Register = Register;
 window.Dashboard = Dashboard;
+window.MobileSidebar = MobileSidebar;
 window.QuizPanel = QuizPanel;
+
+function MobileSidebar() {
+  const isAuth = isAuthenticate();
+  return `
+      <div class="mobile-sidebar">
+        <img src="/images/icons/close.svg" alt="close" width="25px" height="25px" onclick="handleMobileSidebar('close')" />
+        ${
+          isAuth
+            ? `
+            <div class="profile">
+              <div class="avatar-sidebar">R</div>
+              <h2>Rehan Pathan</h2>
+              <p>rehanpathan8012@gmail.com</p>
+            </div>
+          `
+            : `
+            <img src="/images/dashboard.png" alt="dash" width="95%" />
+          `
+        }
+        <hr/>
+        <section>
+          <li onclick="LandingPage()">
+            <img src="/images/icons/home.svg" alt="home" width="23px" height="23px" />
+            Home
+          </li>
+          <a  href="https://opentdb.com/" target="_blank">
+            <li>
+              <img src="/images/icons/brand-edge.svg" alt="home" width="23px" height="23px" />
+              Trivia
+            </li>
+          </a>
+          <li onclick="confirmBeforeTest()">
+            <img src="/images/icons/file-certificate.svg" alt="home" width="23px" height="23px" />
+            Quiz
+          </li>
+          ${
+            isAuth
+              ? `<li onclick="Dashboard()">
+              <img src="/images/icons/layout-dashboard.svg" alt="home" width="23px" height="23px" />
+              Dashboard
+            </li>`
+              : ""
+          }
+        </section>
+
+        <hr/>
+
+        <section class="btns-mobile-sidebar">
+          ${
+            isAuth
+              ? `
+              <button onclick="handleLogout()" class="logout-ms">
+                <img src="/images/icons/logout.svg" alt="home" width="23px" height="23px" />
+                Logout
+              </button>
+            `
+              : `
+               <button onclick="Login()">Login</button>
+               <button onclick="Register()">Register</button>
+              `
+          }
+         
+          
+        </section>
+          
+          
+        
+      </div>
+  `;
+}
 
 function Navbar() {
   const isAuth = isAuthenticate();
@@ -120,7 +213,7 @@ function Navbar() {
 
       <div class="mobile-nav">
           <h2 class="logo">QuizNexus.</h2>
-          <img src="/images/icons/menu.svg" alt="menu" style="filter: invert(1)" />
+          <img  src="/images/icons/menu.svg" alt="menu"  onclick="handleMobileSidebar('open')" />
         </div>
   
   `;
@@ -131,6 +224,7 @@ function LandingPage() {
     <main>
 
      ${Navbar()}
+     ${MobileSidebar()}
 
       <div class="wrapper">
         <div class="info">
@@ -139,7 +233,10 @@ function LandingPage() {
             Dive into the ultimate quiz experience — a blend of excitement,
             learning. and triumph, quizzes it's more than a game.
           </p>
-          <button onclick="confirmBeforeTest()"><i class="fa-solid fa-circle-play"></i>play today</button>
+          <button style="display:flex; align-items:center; gap:5px; justify-content:center" onclick="confirmBeforeTest()">
+            <img src="/images/icons/play.svg" width="20px" height="20px" >
+            play today
+          </button>
         </div>
         <img src="/images/hero.png" width="100%" alt="" />
       </div>
@@ -251,6 +348,7 @@ function Dashboard() {
 
   let str = `
     ${Navbar()}
+    ${MobileSidebar()}
     <div class="dashboard">
       <div class="sidebar">
         <div class="profile">
